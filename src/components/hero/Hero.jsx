@@ -32,10 +32,10 @@ const sliderVariants = {
     x: 0,
   },
   animate: {
-    x: "-100%",
+    x: "-220%",
     transition: {
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: "mirror",
       duration: 20,
     },
   },
@@ -75,7 +75,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Developer
+        Developer , web designer , freelancer
       </motion.div>
       <div className="imageContainer">
         <img src="/jojo-removebg-preview.png" alt="" />
