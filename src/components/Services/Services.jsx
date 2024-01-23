@@ -33,14 +33,7 @@ const Services = () => {
       ref={ref}
       animate={"animate"}
     >
-      <motion.div className="textContainer" variants={variants}>
-        <p>
-          I focus on making the website
-          <br />
-          fast and responsive.
-        </p>
-        <hr />
-      </motion.div>
+      <motion.div className="textContainer" variants={variants}></motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <motion.div className="title">
           <img src="/mern.png" alt="" />
