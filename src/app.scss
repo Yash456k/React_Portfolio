@@ -1,7 +1,6 @@
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 * {
@@ -14,6 +13,7 @@ html {
 body {
   background-color: #0c0c1d;
   color: lightgray;
+  overflow-x: hidden;
 }
 
 a {
