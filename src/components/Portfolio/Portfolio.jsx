@@ -47,14 +47,13 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button
-              onClick={() => window.open(item.url)}
-              style={{
-                display: item.url === "null" ? "none" : "",
-              }}
+            <a
+              href={item.url}
+              target="_blank"
+              style={{ display: item.url != "null" ? "" : "none" }}
             >
               See Demo
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

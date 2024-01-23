@@ -94,13 +94,17 @@
           }
         }
 
-        button {
+        a {
+          font-size: 20px;
           background-color: orange;
           border: none;
           border-radius: 10px;
           padding: 10px;
           width: 200px;
           cursor: pointer;
+          text-align: center;
+          z-index: 1000;
+          color: white;
         }
       }
     }
