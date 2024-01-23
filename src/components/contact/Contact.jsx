@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -25,6 +26,26 @@ const Contact = () => {
 
   const isInView = useInView(ref, { margin: "-100px" });
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_58wt8wj",
+        "template_qgfhe8n",
+        formRef.current,
+        "3cgtwa1oFVmxrVR2a"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -34,7 +55,7 @@ const Contact = () => {
       whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Let's work together</motion.h1>
+        <motion.h1 variants={variants}>Contact Me</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
           <span>Yash456k@gmail.com</span>
@@ -84,6 +105,7 @@ const Contact = () => {
         </motion.div>
         <motion.form
           ref={formRef}
+          onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 2.7, duration: 1 }}
@@ -92,6 +114,8 @@ const Contact = () => {
           <input type="email" required placeholder="Email" name="email" />
           <textarea rows={5} placeholder="Message" name="message" />
           <button>Submit</button>
+          {error && "Error"}
+          {success && "Success"}
         </motion.form>
       </div>
     </motion.div>

@@ -5,21 +5,24 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "Marcus Aurelius",
-    img: "https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Quotes by Marcus Aurelius",
+    img: "/marcus.png",
+    desc: "A fullstack website , allowing you to signup/login , and bookmark some handpicked quotes by Marcus Aurelius. Uses Express, nodeJs and MongoDB(The website might take time to load on first try ! This is because it is hosted on render's free tier)",
+    url: "https://marcus-aurelius-3n3y.onrender.com/",
   },
   {
     id: 2,
-    title: "1 Aurelius",
-    img: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Portfolio Website (This website)",
+    img: "/portfolio.png",
+    desc: "The website you are currently viewing ! Built using React, framer-motion and SCSS. ",
+    url: "/",
   },
   {
     id: 3,
-    title: "2 Aurelius",
-    img: "https://images.pexels.com/photos/2148217/pexels-photo-2148217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    desc: "lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "(In progress) A fullstack E-commerce website",
+    img: "/inprogress.jpg",
+    desc: "Currently working on a fullstack E-commerce website using React, Redux, Express, NodeJs and MongoDB. The website will allow users to signup/login, add items to cart, checkout and make payments. The website will also have an admin panel, allowing the admin to add new products, edit existing products and delete products.",
+    url: "null",
   },
 ];
 
@@ -44,7 +47,14 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Demo</button>
+            <button
+              onClick={() => window.open(item.url)}
+              style={{
+                display: item.url === "null" ? "none" : "",
+              }}
+            >
+              See Demo
+            </button>
           </motion.div>
         </div>
       </div>
